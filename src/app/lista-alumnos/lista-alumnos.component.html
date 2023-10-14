@@ -1,7 +1,17 @@
 <ion-list>
-  <ion-item *ngFor="let alumno of alumnos">{{alumno}}</ion-item>
+  <ion-item-sliding *ngFor="let alumno of alumnos">
+    <ion-item>
+      {{ alumno }}
+    </ion-item>
+    <ion-item-options side="start">
+      <ion-item-option (click)="addToFavorites(alumno)">
+        <ion-icon name="star-outline"></ion-icon> Agregar a Favoritos
+      </ion-item-option>
+    </ion-item-options>
+    <ion-item-options side="end">
+      <ion-item-option (click)="showActionSheet(alumno)">
+        <ion-icon name="trash-outline"></ion-icon> Eliminar
+      </ion-item-option>
+    </ion-item-options>
+  </ion-item-sliding>
 </ion-list>
-
-<p>
-  lista-alumnos works!
-</p>
