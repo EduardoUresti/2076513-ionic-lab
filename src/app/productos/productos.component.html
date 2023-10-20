@@ -1,4 +1,15 @@
-<div *ngFor="let producto of productos">
-    {{ producto.name }}
-</div>
+
+    <ion-list>
+      <ion-item *ngFor="let producto of productos">
+        <ion-thumbnail slot="start">
+          <img [src]="producto.image" alt="Imagen del producto">
+        </ion-thumbnail>
+        <ion-label>
+          <h2>{{ producto.title }}</h2>
+          <p>Precio: {{ producto.price }}</p>
+          <p>Categoría: {{ producto.category }}</p>
+        </ion-label>
+      </ion-item>
+    </ion-list>
+
 

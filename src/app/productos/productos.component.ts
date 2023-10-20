@@ -6,19 +6,20 @@ import { ConsultaService } from '../consulta.service';
   templateUrl: './productos.component.html',
   styleUrls: ['./productos.component.scss'],
 })
-export class ProductosComponent  implements OnInit {
-
-  constructor(private consulta: ConsultaService) { }
-
-  ngOnInit() {this.obtenerProductos();}
+export class ProductosComponent implements OnInit{
 
   productos: any[] = [];
 
+  constructor(private consulta: ConsultaService) { }
+  ngOnInit(): void {
+    this.obtenerProductos();
+  }
+
 obtenerProductos(): void {
-    this.consulta.getProductos()
-        .subscribe((resp: Object) => {
+    this.consulta.getProductos().subscribe((resp: Object) => {
             this.productos = resp as any[];
         });
+
 }
 
 }

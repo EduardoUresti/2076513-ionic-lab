@@ -5,7 +5,6 @@ import { HttpClientModule } from '@angular/common/http';
 import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
 import { ListaAlumnosComponent } from './lista-alumnos/lista-alumnos.component';
 import { ProductosComponent } from './productos/productos.component';
-
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 
