@@ -3,10 +3,11 @@ import { ActivatedRoute } from '@angular/router';
 import { ConsultaService } from '../consulta.service';
 
 @Component({
-  selector: 'app-productodetalle',
-  templateUrl: './productodetalle.component.html',
-  styleUrls: ['./productodetalle.component.scss'],
+  selector: 'app-producto-detalle',
+  templateUrl: './producto-detalle.component.html',
+  styleUrls: ['./producto-detalle.component.scss'],
 })
+
 export class ProductodetalleComponent  implements OnInit {
 
   producto: any;

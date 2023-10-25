@@ -12,4 +12,8 @@ export class ConsultaService {
     return this.http.get('https://fakestoreapi.com/products');
 }
 
+getProductoPorId(id: number) {
+  return this.http.get(`https://fakestoreapi.com/products/${id}`);
+}
+
 }

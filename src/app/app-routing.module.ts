@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 import { ProductosComponent } from './productos/productos.component';
+import { ProductodetalleComponent } from './productodetalle/productodetalle.component';
+
 
 const routes: Routes = [
   {
@@ -8,14 +10,17 @@ const routes: Routes = [
     loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)
   },
   {
-    path: '',
-    redirectTo: '/productos',
-    pathMatch: 'full'
-  },
-
-  {
     path: 'productos',
     component: ProductosComponent,
+  },
+  {
+    path: 'productos/:id', // :id es un marcador de posición para el ID del producto
+    component: ProductodetalleComponent,
+  },
+  {
+    path: '', // Ruta predeterminada
+    redirectTo: '/productos',
+    pathMatch: 'full',
   },
 
 ];
