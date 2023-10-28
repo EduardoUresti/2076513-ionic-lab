@@ -1,17 +1,29 @@
+<form #templateForm="ngForm" (ngSubmit)="agregarAlumno()">
+  <ion-item [class.invalid]="templateForm.invalid && templateForm.dirty && templateForm.touched">
+    <ion-label position="floating">Nombre</ion-label>
+    <ion-input
+      type="text"
+      name="nombre"
+      [(ngModel)]="nuevoAlumno.nombre"
+      required
+    ></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Presente</ion-label>
+    <ion-toggle
+      name="presente"
+      [(ngModel)]="nuevoAlumno.presente"
+    ></ion-toggle>
+  </ion-item>
+
+  <ion-button type="submit" [disabled]="templateForm.invalid">Agregar</ion-button>
+</form>
+
+<!-- Lista de alumnos -->
 <ion-list>
-  <ion-item-sliding *ngFor="let alumno of alumnos">
-    <ion-item>
-      {{ alumno }}
-    </ion-item>
-    <ion-item-options side="start">
-      <ion-item-option (click)="addToFavorites(alumno)">
-        <ion-icon name="star-outline"></ion-icon> Agregar a Favoritos
-      </ion-item-option>
-    </ion-item-options>
-    <ion-item-options side="end">
-      <ion-item-option (click)="showActionSheet(alumno)">
-        <ion-icon name="trash-outline"></ion-icon> Eliminar
-      </ion-item-option>
-    </ion-item-options>
-  </ion-item-sliding>
+  <ion-item *ngFor="let alumno of alumnos">
+    <ion-label>{{ alumno.nombre }}</ion-label>
+    <ion-toggle [checked]="alumno.presente"></ion-toggle>
+  </ion-item>
 </ion-list>
