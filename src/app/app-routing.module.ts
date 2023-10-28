@@ -14,12 +14,12 @@ const routes: Routes = [
     component: ProductosComponent,
   },
   {
-    path: 'productos/:id', // :id es un marcador de posición para el ID del producto
+    path: 'productos/:id',
     component: ProductodetalleComponent,
   },
   {
-    path: '', // Ruta predeterminada
-    redirectTo: '/productos',
+    path: '',
+    redirectTo: '/home',
     pathMatch: 'full',
   },
 

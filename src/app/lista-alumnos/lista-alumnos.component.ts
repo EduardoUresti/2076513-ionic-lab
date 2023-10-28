@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { ActionSheetController } from '@ionic/angular';
+import { Alumno } from '../alumno.model'; 
 
 @Component({
   selector: 'app-lista-alumnos',
@@ -8,6 +9,8 @@ import { ActionSheetController } from '@ionic/angular';
 })
 export class ListaAlumnosComponent {
   alumnos: string[] = ["Carlos", "Ximena", "Alberto", "Eduardo", "Baraba", "Georgina", "Kevin"];
+
+  nuevoAlumno: Alumno = new Alumno('', false);
 
   constructor(public actionSheetController: ActionSheetController) {}
 
