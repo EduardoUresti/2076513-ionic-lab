@@ -1,19 +1,14 @@
 import { Injectable } from '@angular/core';
 import { Camera, CameraResultType, CameraSource } from '@capacitor/camera';
 import { Filesystem, Directory } from '@capacitor/filesystem';
-import { Preferences } from '@capacitor/preferences';
+import { Capacitor } from '@capacitor/core';
 
 @Injectable({
   providedIn: 'root'
 })
 export class FotoServiceService {
 
-
- 
-
-
   constructor() { }
-
 
   public async addNewToGallery() {
     try {
@@ -22,36 +17,43 @@ export class FotoServiceService {
         source: CameraSource.Camera,
         quality: 100,
       });
- 
+
       const savedFile = await this.savePicture(capturedPhoto);
- 
+
       console.log('File saved at:', savedFile.filepath);
+
     } catch (error) {
       console.error('Error taking photo:', error);
     }
   }
- 
+
   private async savePicture(cameraPhoto: any) {
     const base64Data = await this.readAsBase64(cameraPhoto);
- 
+
     const fileName = new Date().getTime() + '.jpeg';
     const savedFile = await Filesystem.writeFile({
       path: fileName,
       data: base64Data,
       directory: Directory.Data,
     });
- 
+
     const path = savedFile.uri;
+
+    const currentPlatform = Capacitor.getPlatform();
+    if (currentPlatform === 'ios') {
+    } else if (currentPlatform === 'android') {
+    }
+
     return {
       filepath: fileName,
       webviewPath: cameraPhoto.webPath,
     };
   }
- 
+
   private async readAsBase64(cameraPhoto: any): Promise<string> {
     const response = await fetch(cameraPhoto.webPath);
     const blob = await response.blob();
- 
+
     return new Promise<string>((resolve, reject) => {
       const reader = new FileReader();
       reader.onloadend = () => {
@@ -65,4 +67,5 @@ export class FotoServiceService {
       reader.onerror = reject;
       reader.readAsDataURL(blob);
     });
-  }}
+  }
+}
