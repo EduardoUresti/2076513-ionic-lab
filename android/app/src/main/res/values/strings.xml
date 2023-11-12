@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">miApp-2076513</string>
+    <string name="title_activity_main">miApp-2076513</string>
+    <string name="package_name">eduardo.uresti.com</string>
+    <string name="custom_url_scheme">eduardo.uresti.com</string>
+</resources>
