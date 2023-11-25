@@ -1,0 +1,15 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Publicar Foto</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-img [src]="image"></ion-img>
+  <ion-item>
+    <ion-label position="floating">Descripción</ion-label>
+    <ion-textarea [(ngModel)]="caption" placeholder="Escribe una descripción"></ion-textarea>
+  </ion-item>
+  <ion-button expand="block" (click)="publish()">Publicar</ion-button>
+  <ion-button expand="block" (click)="cancel()">Cancelar</ion-button>
+</ion-content>
