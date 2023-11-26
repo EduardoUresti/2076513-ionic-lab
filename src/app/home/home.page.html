@@ -1,16 +1,12 @@
 
 
-<ion-content [fullscreen]="true">
-  <button ion-button routerLink="/tomfoto">Tomar Foto</button>
-  <button ion-button routerLink="/showphotos">Ver fotos</button>
-
-
-  <button (click)="tomarFoto()">Tomar Foto</button>
-  <a routerLink="/tomarfotos">Tomar Foto</a>
-  <button ion-button routerLink="/tomfoto">Tomar Foto</button>
+<ion-content [fullscreen]="true" class="button-container">
+  <div class="button-group">
+    <button ion-button routerLink="/tomfoto" class="custom-button">Tomar Foto</button>
+    <button ion-button routerLink="/showphotos" class="custom-button">Ver fotos</button>
+  </div>
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">Why</ion-title>
     </ion-toolbar>
   </ion-header>
 
