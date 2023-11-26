@@ -14,7 +14,6 @@ export class PubfotoComponent {
     this.photoService.loadSaved();
   }
 
-  // Method to retrieve the webviewPath of the latest photo
   getphotosWebviewPath(): string {
     const photos = this.photoService.getphotos();
     return photos ? photos.webviewPath || '' : '';

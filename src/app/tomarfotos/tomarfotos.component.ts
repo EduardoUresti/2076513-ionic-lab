@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
     <ion-button (click)="takePhoto()">Tomar Foto</ion-button>
   `,
 })
-export class TomarFotosComponent {
+export class TomarfotosComponent {
 
   constructor(private router: Router) {}
 

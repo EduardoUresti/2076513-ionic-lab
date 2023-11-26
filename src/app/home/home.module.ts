@@ -8,10 +8,11 @@ import { ProductosComponent } from '../productos/productos.component';
 import { ProductodetalleComponent } from '../productodetalle/productodetalle.component';
 import { ListaAlumnosComponent } from '../lista-alumnos/lista-alumnos.component';
 import { RouterModule } from '@angular/router';
-import { TomarFotosComponent } from '../tomarfotos/tomarfotos.component';
+import { TomarfotosComponent } from '../tomarfotos/tomarfotos.component';
 import { PublicarFotoComponent } from '../publicarfoto/publicarfoto.component';
 import { TomFotoComponent } from '../tomfoto/tomfoto.component';
 import { PubfotoComponent } from '../pubfoto/pubfoto.component';
+import { ShowphotosComponent } from '../showphotos/showphotos.component'
 
 
 @NgModule({
@@ -22,6 +23,6 @@ import { PubfotoComponent } from '../pubfoto/pubfoto.component';
     HomePageRoutingModule,
     RouterModule,
   ],
-  declarations: [HomePage, ProductosComponent, ProductodetalleComponent, ListaAlumnosComponent, TomarFotosComponent, PublicarFotoComponent, TomFotoComponent, PubfotoComponent]
+  declarations: [HomePage, ProductosComponent, ProductodetalleComponent, ListaAlumnosComponent, TomarfotosComponent, PublicarFotoComponent, TomFotoComponent, PubfotoComponent, ShowphotosComponent]
 })
 export class HomePageModule {}
